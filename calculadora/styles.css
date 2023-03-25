@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+@keyframes gradientBackground {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+  z-index: -1;
+}
+
+.calculadora {
+  max-width: 300px;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+input, button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+input {
+  grid-column: span 4;
+  text-align: right;
+  background-color: #f0e1e1;
+  color: #333;
+}
+
+button {
+  background-color: #9dd1f1;
+  color: #333;
+}
+
+button:hover {
+  background-color: #78bfe2;
+}
+
+button:active {
+  background-color: #58a9ce;
+  transform: scale(0.95);
+}
+
+button[data-type="operator"] {
+  background-color: #f1c38e;
+}
+
+button[data-type="operator"]:hover {
+  background-color: #e2b47d;
+}
+
+button[data-type="operator"]:active {
+  background-color: #ce9f62;
+  transform: scale(0.95);
+}
+
+button[data-type="equal"] {
+  background-color: #7ed957;
+}
+
+button[data-type="equal"]:hover {
+  background-color: #6ec847;
+}
+
+button[data-type="equal"]:active {
+  background-color: #5aa738;
+  transform: scale(0.95);
+}
+
+.history-container {
+  max-width: 300px;
+  width: 100%;
+  margin-top: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: #e3e9eb;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 
+}
